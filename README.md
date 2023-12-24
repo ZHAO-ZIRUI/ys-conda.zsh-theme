@@ -18,3 +18,8 @@ A modified ys theme for oh-my-zsh to adapt conda env
    ```
    conda config --set changeps1 False
    ```
+
+5. Reload zsh
+   ```
+   source ~/.zshrc
+   ```

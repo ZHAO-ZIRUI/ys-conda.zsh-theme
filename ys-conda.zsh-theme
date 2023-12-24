@@ -85,6 +85,7 @@ ${hg_info}\
 ${git_info}\
 ${svn_info}\
 ${venv_info}\
+${conda_info}\
  \
 [%*] $exit_code
 %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"

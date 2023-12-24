@@ -53,6 +53,16 @@ virtenv_prompt() {
 	echo "${YS_THEME_VIRTUALENV_PROMPT_PREFIX}${VIRTUAL_ENV:t}${YS_THEME_VIRTUALENV_PROMPT_SUFFIX}"
 }
 
+# Conda
+local conda_info='$(conda_prompt)'
+YS_THEME_CONDA_PROMPT_TAG_PREFIX=" %{$fg[magenta]%}"
+YS_THEME_CONDA_PROMPT_PREFIX="%{$fg[green]%}"
+YS_THEME_CONDA_PROMPT_SUFFIX=" %{$reset_color%}%"
+conda_prompt() {
+	[[ -n "${CONDA_DEFAULT_ENV:-}" ]] || return
+	echo "${YS_THEME_CONDA_PROMPT_TAG_PREFIX}conda:${YS_THEME_CONDA_PROMPT_PREFIX}${CONDA_DEFAULT_ENV:t}${YS_THEME_CONDA_PROMPT_SUFFIX}"
+}
+
 local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 
 # Prompt format:
